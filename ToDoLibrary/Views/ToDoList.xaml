@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ToDoLibrary.Views.ToDoList">
-	<ListView x:Name="TodoList" Margin="20">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ToDoLibrary.Views.ToDoList">
+<ContentPage.ToolbarItems>
+        <ToolbarItem Text="+" >
+            
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ListView x:Name="listItems" Margin="5" IsVisible="true" >
         <ListView.ItemTemplate> 
             <DataTemplate> 
 
-                <ViewCell> 
-                    <StackLayout  Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                    <Label Text="Title"  VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"></Label>
+                <ViewCell>
+                    <StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Label  Text="{Binding Name}" 
+                                VerticalTextAlignment="Center" 
+                                HorizontalOptions="StartAndExpand" 
+                                TextColor="Black"/>
 
                     </StackLayout>
                 </ViewCell>
