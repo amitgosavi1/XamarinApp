@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="ToDoLibrary.Views.ToDoDetails" 
+             Title="Add New Item">
+
+
+    <StackLayout Margin="20" VerticalOptions="StartAndExpand">
+        <Label Text="Add new To do Item here. If Item is already completed then mark switch as completed. Completed items will be displayed on main list"
+               TextColor="Gray"/>
+        <BoxView BackgroundColor="Gray" HeightRequest="1" HorizontalOptions ="FillAndExpand" />
+        <BoxView BackgroundColor="Transparent"  HorizontalOptions ="FillAndExpand"/>
+        <Label Text="ToDo Name" />
+        <Entry Text="{Binding Name}" HeightRequest="50" Placeholder="Wash a Car, Buy Milk etc."/>
+        <BoxView BackgroundColor="Gray" HeightRequest="0.5" HorizontalOptions ="FillAndExpand"/>
+        <BoxView BackgroundColor="Transparent"  HorizontalOptions ="FillAndExpand"/>
+        <Label Text="Details" />
+        <Entry Text="{Binding Notes}" HeightRequest="100" Placeholder="Wash a Car on the way back to home..." />
+        <BoxView BackgroundColor="Transparent"  HorizontalOptions ="FillAndExpand"/>
+        <BoxView BackgroundColor="Gray" HeightRequest="0.5" HorizontalOptions ="FillAndExpand"/>
+        <Label Text="Is completed?" />
+        <Switch IsToggled="{Binding Done}" />
+        <BoxView BackgroundColor="Gray" HeightRequest="1" HorizontalOptions ="FillAndExpand"/>
+        <Button Text="Save" Clicked="ToDoSaved" />
+
+    </StackLayout>
+</ContentPage>

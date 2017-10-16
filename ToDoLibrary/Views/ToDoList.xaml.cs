@@ -15,9 +15,15 @@ namespace ToDoLibrary.Views
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Get the list items and refresh list.
+        /// ToDO: Get items from local database.
+        /// </summary>
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+
+            items.Clear();
             TodoItem item1 = new TodoItem()
             {
                 ID = 1,
@@ -30,7 +36,7 @@ namespace ToDoLibrary.Views
             TodoItem item2 = new TodoItem()
             {
                 ID = 2,
-                Name = "Item 2",
+                Name = "Item 2 Hello World Hello World Hello World Hello World Hello World",
                 Notes = "Hello World",
                 Done = false
 
@@ -41,6 +47,15 @@ namespace ToDoLibrary.Views
 
 
         } 
+
+        /// <summary>
+        /// Navigate user to details screen to add new entry
+        /// </summary>
+        async void AddNewItem() 
+        {
+            await Navigation.PushAsync(new ToDoDetails());
+
+        }
     }
 
 
