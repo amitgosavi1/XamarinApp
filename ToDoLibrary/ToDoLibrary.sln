@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoLibrary", "ToDoLibrary.csproj", "{A632916E-8F47-4684-A31C-23CA594ECBBE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A632916E-8F47-4684-A31C-23CA594ECBBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A632916E-8F47-4684-A31C-23CA594ECBBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A632916E-8F47-4684-A31C-23CA594ECBBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A632916E-8F47-4684-A31C-23CA594ECBBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
