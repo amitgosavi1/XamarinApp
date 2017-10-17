@@ -2,19 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="ToDoLibrary.Views.ToDoList"
+             xmlns:local="clr-namespace:ToDoLibrary.Views" 
              Title = "Todo List"
     >
 <ContentPage.ToolbarItems>
-        <ToolbarItem Text="+" Clicked="AddNewItem">
+        <ToolbarItem Text="+" Clicked="AddNewItem"  >
             
         </ToolbarItem>
+
     </ContentPage.ToolbarItems>
 
-    <ListView x:Name="listItems" Margin="5" IsVisible="true" >
+    <ListView x:Name="listItems" Margin="5" IsVisible="true" HasUnevenRows="true"  >
         <ListView.ItemTemplate> 
             <DataTemplate> 
-
-                <ViewCell>
+            <local:ToDoCell/>
+                <!--<ViewCell>
                     <StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                         <Label  Text="{Binding Name}" 
                                 VerticalTextAlignment="Center" 
@@ -22,7 +24,7 @@
                                 TextColor="Black"/>
 
                     </StackLayout>
-                </ViewCell>
+                </ViewCell>-->
             </DataTemplate>
 
         </ListView.ItemTemplate>

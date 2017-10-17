@@ -1,5 +1,21 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ToDoLibrary.Views.ToDoCell">
-	<ContentPage.Content>
-	</ContentPage.Content>
-</ContentPage>
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="ToDoLibrary.Views.ToDoCell" 
+
+    >
+     <StackLayout  Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"> 
+        <StackLayout Margin="20,0,0,0" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"> 
+            <BoxView BackgroundColor="Transparent" HeightRequest="2"  />
+            <Label Text="{Binding Name}" FontAttributes="Bold" />
+            <Label Text="{Binding Notes}"  />
+            <BoxView BackgroundColor="Transparent" HeightRequest="2"  />
+        </StackLayout>
+        <Image Source="corssIcon.png" HorizontalOptions="End"  > 
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="DeleteImageTapped" NumberOfTapsRequired="1"/>
+            </Image.GestureRecognizers>
+        </Image>
+    </StackLayout>
+
+</ViewCell>

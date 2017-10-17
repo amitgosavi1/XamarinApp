@@ -5,11 +5,22 @@ using Xamarin.Forms;
 
 namespace ToDoLibrary.Views
 {
-    public partial class ToDoCell : ContentPage
+
+    public interface IToDoInterface
+    {
+        void DeleteItem();
+    }
+
+    public partial class ToDoCell : ViewCell
     {
         public ToDoCell()
         {
             InitializeComponent();
+        }
+
+        void DeleteImageTapped(object sender, EventArgs args){
+          
+          
         }
     }
 }

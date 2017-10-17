@@ -20,7 +20,7 @@ namespace ToDoList
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-           
+            
             Forms.Init();
             LoadApplication(new ToDoLibrary.App());
             return base.FinishedLaunching(app, options);
