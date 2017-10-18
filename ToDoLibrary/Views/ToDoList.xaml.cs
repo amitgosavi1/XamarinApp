@@ -6,19 +6,20 @@ using ToDoLibrary.Models;
 using System.Collections.ObjectModel;
 using ToDoLibrary.Views;
 
-
 namespace ToDoLibrary.Views
 {
     public partial class ToDoList : ContentPage
-    {
-        ObservableCollection<TodoItem> items = new ObservableCollection<TodoItem>();
+    {   
+        public List<TodoItem> allItems;  
+        ListItemModel items;  
 
         public ToDoList() {
-
             InitializeComponent();
-
+           
+            MessagingCenter.Subscribe<TodoItem>(this, "", (sender) => {
+                ReloadList();
+            });
         }
-
 
         /// <summary>
         /// Get the list items and refresh list.
@@ -26,28 +27,12 @@ namespace ToDoLibrary.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-
-            items.Clear();
-
-            listItems.ItemsSource = await App.DBManager.getItemList();
-
-
-        } 
-
-        /// <summary>
-        /// Navigate user to details screen to add new entry
-        /// </summary>
-        async void AddNewItem() 
-        {
-            await Navigation.PushAsync(new ToDoDetails
-            {
-                BindingContext = new TodoItem()
-            });
+            ReloadList();
         }
 
+        private async void ReloadList(){
+            items = new ListItemModel(await App.DBManager.getItemList());
+            listItems.ItemsSource = items.Items;
+        }
     }
-
-
-
-
 }

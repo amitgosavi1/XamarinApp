@@ -15,7 +15,7 @@
         <BoxView BackgroundColor="Gray" HeightRequest="0.5" HorizontalOptions ="FillAndExpand"/>
         <BoxView BackgroundColor="Transparent"  HorizontalOptions ="FillAndExpand"/>
         <Label Text="Details" />
-        <Entry Text="{Binding Notes}" HeightRequest="100" Placeholder="Wash a Car on the way back to home..." />
+        <Entry Text="{Binding Notes}" HeightRequest="100" Placeholder="Wash a Car on the way back to home..."  />
         <BoxView BackgroundColor="Transparent"  HorizontalOptions ="FillAndExpand"/>
         <BoxView BackgroundColor="Gray" HeightRequest="0.5" HorizontalOptions ="FillAndExpand"/>
         <Label Text="Is completed?" />

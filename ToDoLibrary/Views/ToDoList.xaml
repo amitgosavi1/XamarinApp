@@ -3,31 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="ToDoLibrary.Views.ToDoList"
              xmlns:local="clr-namespace:ToDoLibrary.Views" 
+                
              Title = "Todo List"
     >
 <ContentPage.ToolbarItems>
-        <ToolbarItem Text="+" Clicked="AddNewItem"  >
-            
+        <ToolbarItem Text="Add" Command="{Binding AddItemCommand}">
         </ToolbarItem>
-
     </ContentPage.ToolbarItems>
-
-    <ListView x:Name="listItems" Margin="5" IsVisible="true" HasUnevenRows="true"  >
+    <ContentPage.BindingContext>
+        <local:ListItemModel />
+    </ContentPage.BindingContext>
+    <ListView x:Name="listItems" Margin="5" IsVisible="true" HasUnevenRows="true" ItemsSource="{Binding Items}"   >
+        <ListView.Behaviors> 
+            <local:EventToCommandBehavior EventName ="ItemSelected" ItemSelectedCommand ="{Binding UpdateItemCommand}" CommandParameter="{Binding .SelectedITem}" />
+        </ListView.Behaviors>
         <ListView.ItemTemplate> 
             <DataTemplate> 
             <local:ToDoCell/>
-                <!--<ViewCell>
-                    <StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                        <Label  Text="{Binding Name}" 
-                                VerticalTextAlignment="Center" 
-                                HorizontalOptions="StartAndExpand" 
-                                TextColor="Black"/>
-
-                    </StackLayout>
-                </ViewCell>-->
             </DataTemplate>
-
         </ListView.ItemTemplate>
-        
     </ListView>
 </ContentPage>

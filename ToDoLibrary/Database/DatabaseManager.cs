@@ -50,5 +50,10 @@ namespace ToDoLibrary
                 return database.InsertAsync(item);
             }
         }
+
+        public Task<int> DeleteItemAsync(TodoItem item)
+        {
+            return database.DeleteAsync(item);
+        }
     }
 }

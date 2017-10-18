@@ -31,6 +31,7 @@
     <Compile Remove="Models\ToDoItem.cs" />
     <Compile Remove="MyClass.cs" />
     <Compile Remove="Views\ToDoListCS.cs" />
+    <Compile Remove="Models\ListItemModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -47,6 +48,9 @@
       <DependentUpon>ToDoCell.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ToDoCellCS.cs" />
+    <Compile Include="Models\ListItemModel.cs" />
+    <Compile Include="Others\BehaviorBase.cs" />
+    <Compile Include="Others\EventToCommandBehavior.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Views\ToDoList.xml" />
@@ -84,6 +88,7 @@
     <Folder Include="Views\" />
     <Folder Include="Models\" />
     <Folder Include="Database\" />
+    <Folder Include="Others\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\ToDoList.xaml">

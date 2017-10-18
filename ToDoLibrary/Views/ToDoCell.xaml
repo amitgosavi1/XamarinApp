@@ -2,18 +2,22 @@
 <ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="ToDoLibrary.Views.ToDoCell" 
-
+    xmlns:local="clr-namespace:ToDoLibrary.Views"
     >
      <StackLayout  Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"> 
+        
         <StackLayout Margin="20,0,0,0" Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"> 
             <BoxView BackgroundColor="Transparent" HeightRequest="2"  />
             <Label Text="{Binding Name}" FontAttributes="Bold" />
             <Label Text="{Binding Notes}"  />
             <BoxView BackgroundColor="Transparent" HeightRequest="2"  />
         </StackLayout>
+        <Image Source="checkImage.png" HorizontalOptions="End" IsVisible="{Binding Done}" /> 
         <Image x:Name="DeleteImage" Source="corssIcon.png" HorizontalOptions="End"  > 
             <Image.GestureRecognizers>
-                <TapGestureRecognizer  NumberOfTapsRequired="1" Command="{Binding DeleteCommand}"  />
+                <TapGestureRecognizer  NumberOfTapsRequired="1" Command="{Binding DeleteCommand}"  > 
+                   
+                </TapGestureRecognizer>
             </Image.GestureRecognizers>
         </Image>
     </StackLayout>
