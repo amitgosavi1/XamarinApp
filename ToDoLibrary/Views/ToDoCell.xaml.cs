@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Xamarin.Forms;
 
-using Xamarin.Forms;
 
 namespace ToDoLibrary.Views
 {
@@ -18,9 +16,5 @@ namespace ToDoLibrary.Views
             InitializeComponent();
         }
 
-        void DeleteImageTapped(object sender, EventArgs args){
-          
-          
-        }
     }
 }

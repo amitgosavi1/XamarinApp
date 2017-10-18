@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Windows.Input;
 using SQLite;
+using Xamarin.Forms;
 
 namespace ToDoLibrary.Models
 {
@@ -10,5 +12,19 @@ namespace ToDoLibrary.Models
         public string Name { get; set; }
         public string Notes { get; set; }
         public bool Done { get; set; }
+
+        public ICommand DeleteCommand { get; private set; }
+
+
+        public TodoItem(){
+            DeleteCommand = new Command (DeleteImageTapped);
+        }
+
+        void DeleteImageTapped()
+        {
+            var todo = this;
+            App.DBManager.DeleteItemAsync(todo);
+        }
+
     }
 }
